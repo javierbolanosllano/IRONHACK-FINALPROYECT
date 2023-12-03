@@ -88,9 +88,10 @@ input:checked+.slider::before {
 }
 
 /* Ajustes para el espacio entre el h1 y el botón de Dark Mode */
-h1 {
-  font-size: 50px;
+header {
+  font-size: 25px;
   margin: 10%;
+  margin-top: 20%;
 }
 
 button {
@@ -101,7 +102,7 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin: 10px;
+  margin: 15px;
   transition: background-color 0.3s ease;
 }
 
