@@ -1,19 +1,95 @@
+@font-face {
+  font-family: 'Barlow'; /* Puedes elegir cualquier nombre para la fuente */
+  src: url('../Fuentes/Barlow/Barlow-Medium.ttf') format('truetype');
+  /* Ajusta la ruta según la ubicación de tu archivo de fuente */
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'barlow', sans-serif;
   background-color: #f8f9fa;
   color: #333;
   text-align: center;
-  padding: 50px;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.dark {
+  /* Estilos para el modo oscuro */
+  background-color: #222222;
+  color: #ffffff;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2e2e2e;
+  border-radius: 34px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked+.slider {
+  background-color: #ffdb70;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #ffdb70;
+}
+
+input:checked+.slider::before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#darkmode{
+  margin: 20% 0 5% 0;
+  font-size: 15px;
+}
+
+/* Ajustes para el espacio entre el h1 y el botón de Dark Mode */
 h1 {
-  font-size: 2em;
+  font-size: 50px;
+  margin: 10%;
 }
 
 button {
-  background-color: #333;
-  color: #fff;
+  background-color: #ffdb70;
+  color: #333;
   padding: 15px 30px;
   border: none;
   border-radius: 8px;
@@ -29,6 +105,10 @@ button:hover {
 #login-form {
   display: none;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 input {
@@ -37,19 +117,4 @@ input {
   width: 200px;
   border: 1px solid #ccc;
   border-radius: 8px;
-}
-
-#dark-mode-toggle {
-  background-color: #333;
-  color: #fff;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
-}
-
-#dark-mode-toggle.dark-mode {
-  background-color: #e74c3c;
 }
