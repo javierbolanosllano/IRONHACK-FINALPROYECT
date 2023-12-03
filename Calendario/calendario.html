@@ -18,7 +18,7 @@
         <a href="../Calendario/calendario.html">Calendario</a>
     </nav>
 
-    <table>
+    <table id="evento">
         <tr>
             <td><label for="txtTitulo">Título:</label></td>
             <td><input type="text" id="txtTitulo"></td>
@@ -62,6 +62,14 @@
 
     <div id='calendar'></div>
 
-    <script src="calendario-setup.js"></script>
+    <div id="darkmode">Modo Oscuro</div>
+        <div class="dark-mode-toggle">
+            <label class="switch">
+            <input type="checkbox" id="input">
+            <span class="slider"></span>
+            </label>
+        </div>
+
+    <script src="calendario.js"></script>
 </body>
 </html>

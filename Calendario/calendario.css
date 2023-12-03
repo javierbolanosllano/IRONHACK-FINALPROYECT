@@ -1,24 +1,39 @@
+@font-face {
+  font-family: 'Barlow';
+  src: url('../Fuentes/Barlow/Barlow-Medium.ttf') format('truetype');
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url('../Fotos/body_backround.jpg');
-  background-size: cover;
-  background-position: center;
+  font-family: 'Barlow', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  text-align: center;
   margin: 0;
   padding: 0;
 }
 
 header {
-  text-align: center;
-  margin: 10px auto;
-  padding: 10px;
+  padding: 5px 0;
   font-size: 1.5em;
-  color: #fff;
   border-radius: 15px;
+  margin: 10px 10%;
+  text-align: center;
 }
 
-/* Estilos para la navegación */
+h1{
+  color: #333;
+  font-size: 50px;
+  margin: 10%;
+}
+
+h2 {
+  color: #333;
+  font-size: 25px;
+  margin: 10% 10% 2% 10%;
+}
+
 nav {
-  background-color: #82b5d7;
+  background-color: #ffdb70;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 5px;
@@ -28,35 +43,94 @@ nav {
   margin: 10px 20% 2% 20%;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 10px;
-}
-
 nav a {
   text-decoration: none;
-  color: white;
+  color: #333;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: rgba(0, 0, 0, 0.739);
+.dark {
+  background-color: #222222;
+  color: #ffffff;
 }
 
+.dark h1 {
+  color: #ffffff;
+}
 
-main {
-  margin: 20px auto;
+.dark h2 {
+  color: #ffffff;
+}
+
+.dark nav {
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2e2e2e;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ffdb70;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ffdb70;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  margin-bottom: 10%;
+}
+
+#darkmode {
+  margin-top: 5%;
+  font-size: 15px;
 }
 
 #calendar {
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 800px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -66,8 +140,8 @@ main {
   display: block;
   margin: 10px auto;
   padding: 10px;
-  background-color: #82b5d7;
-  color: #fff;
+  background-color: #ffdb70;
+  color: #333;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -75,15 +149,15 @@ main {
 }
 
 #btnAgregarEvento:hover {
-  background-color: #529fd3;
+  background-color: #daac21;
 }
 
 #btnBorrarEvento {
   display: block;
-  margin: 10px auto;
+  margin: 10px 10px 10px 10px;
   padding: 10px;
-  background-color: #82b5d7;
-  color: #fff;
+  background-color: #ffdb70;
+  color: #333;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -91,7 +165,12 @@ main {
 }
 
 #btnBorrarEvento:hover {
-  background-color: #529fd3;
+  background-color: #daac21;
+}
+
+#evento{
+  display: flexbox;
+  
 }
 
 label {
@@ -106,12 +185,11 @@ input[type="text"],
 input[type="date"],
 input[type="time"],
 textarea {
-  width: 50%;
-  margin: 0 auto;
-  padding: 8px;
-  margin-top: 5px;
-  box-sizing: border-box;
-  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 textarea {
@@ -135,7 +213,7 @@ textarea {
 }
 
 .fc-event:hover {
-  background-color: #45a049;
+  background-color: #ffdb70;
 }
 
 .evento-estudio {
