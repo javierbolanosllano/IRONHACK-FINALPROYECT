@@ -1,7 +1,3 @@
-// tareas.js
-
-// Agrega estas funciones en tu archivo JavaScript
-
 function marcarComoCompletada(button) {
     // Encuentra la fila padre (tr) de este botón y actualiza su estilo o realiza acciones necesarias
     var tareaRow = button.closest('tr');
@@ -41,15 +37,15 @@ function agregarNuevaTarea() {
         </td>
     `;
 
-    // Agrega la nueva fila al cuerpo de la tabla
-    document.getElementById('tareas-body').appendChild(nuevaFila);
+// Agrega la nueva fila al cuerpo de la tabla
+document.getElementById('tareas-body').appendChild(nuevaFila);
 
-    // Almacena la nueva tarea en el almacenamiento local
-    agregarTareaAlAlmacenamiento(nuevaTarea, nuevaFecha);
+// Almacena la nueva tarea en el almacenamiento local
+agregarTareaAlAlmacenamiento(nuevaTarea, nuevaFecha);
 
-    // Limpia los campos del formulario
-    tareaInput.value = '';
-    fechaInput.value = '';
+// Limpia los campos del formulario
+tareaInput.value = '';
+fechaInput.value = '';
 }
 
 function agregarTareaAlAlmacenamiento(tarea, fecha) {
@@ -71,3 +67,11 @@ function eliminarTareaDelAlmacenamiento(tarea, fecha) {
         localStorage.setItem('tareas', JSON.stringify(tareas));
     }
 }
+
+document.getElementById('input').addEventListener('change', () => {
+    if (document.body.className.indexOf('dark') === -1) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  });

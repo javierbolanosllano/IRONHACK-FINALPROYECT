@@ -1,24 +1,33 @@
-/* Estilos generales */
+@font-face {
+    font-family: 'Barlow';
+    src: url('../Fuentes/Barlow/Barlow-Medium.ttf') format('truetype');
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-    background-image: url('../Fotos/body_backround.jpg');
-    background-size: cover;
-    background-position: center;
+    font-family: 'Barlow', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
     margin: 0;
     padding: 0;
 }
 
 header {
-    color: #131313;
     padding: 5px 0;
     font-size: 1.5em;
+    border-radius: 15px;
     margin: 10px 10%;
     text-align: center;
 }
 
-/* Estilos para la navegación */
+h1 {
+    color: #333;
+    font-size: 50px;
+    margin: 10%;
+}
+
 nav {
-    background-color: #82b5d7;
+    background-color: #ffdb70;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 5px;
@@ -28,65 +37,39 @@ nav {
     margin: 10px 20% 2% 20%;
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
 nav a {
     text-decoration: none;
-    color: white;
+    color: #333;
     transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: rgba(0, 0, 0, 0.739);
-}
-
-/* Estilos para la sección de tareas pendientes */
-#tareas-container {
+#tareas-container, #nuevaTareaForm {
     max-width: 800px;
-    margin: 10% 10% 0% 10%;
-}
-
-#tareas-container h2 {
-    font-size: 1.8em;
-    margin-top: 0;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 #tareas-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border-radius: 10px; /* Añade esta línea para redondear las esquinas de la tabla */
 }
 
 #tareas-table th, #tareas-table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 #tareas-table th {
-    background-color: #82b5d7;
-    color: white;
+    background-color: #ffdb70;
+    color: #333;
 }
 
 #tareas-table tbody tr:hover {
-    background-color: #f5f5f5;
-}
-
-/* Estilos para la sección de añadir nuevas tareas */
-#nuevaTareaForm {
-    max-width: 800px;
-    margin: 20px 10%;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #e8e8e8;
 }
 
 #nuevaTareaForm label {
@@ -95,22 +78,98 @@ nav a:hover {
 }
 
 #nuevaTareaForm input {
-    width: 85%;
-    padding: 8px;
-    margin-bottom: 16px;
-    border-radius: 15px;
-}
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    }
 
 #nuevaTareaForm button {
-    background-color: #82b5d7;
-    color: #fff;
-    padding: 10px;
+    background-color: #ffdb70;
+    color: #333;
+    padding: 15px 30px;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 15px;
+    margin: 10px;
     transition: background-color 0.3s ease;
 }
 
 #nuevaTareaForm button:hover {
-    background-color: #5a8aad;
+    background-color: #555;
+}
+
+.dark {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.dark h1 {
+    color: #ffffff;
+}
+
+.dark nav {
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2e2e2e;
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+.slider::before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #ffdb70;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #ffdb70;
+}
+
+input:checked + .slider::before {
+    transform: translateX(26px);
+}
+
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+#darkmode {
+    margin-top: 5%;
+    font-size: 15px;
 }

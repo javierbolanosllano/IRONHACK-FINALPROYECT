@@ -74,10 +74,11 @@ input:checked+.slider::before {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 2%; /* Ajusta el margen superior según sea necesario */
 }
 
 #darkmode{
-  margin: 20% 0 5% 0;
+  margin-top: 5%;
   font-size: 15px;
 }
 
