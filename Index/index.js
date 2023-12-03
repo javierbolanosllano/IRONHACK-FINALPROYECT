@@ -1,7 +1,8 @@
-var toggle = document.getElementById('container');
-var body =document.querySelector('body');
 
-toggle.onclick = function(){
-    toggle.classList.toggle('active');
-    body.classList.toggle('active');
-}
+var darkModeToggle = document.getElementById('dark-mode-toggle');
+var body = document.body;
+
+darkModeToggle.addEventListener('click', function() {
+    body.classList.toggle('dark-mode');
+    darkModeToggle.textContent = body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+});
