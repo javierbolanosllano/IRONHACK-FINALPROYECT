@@ -1,13 +1,7 @@
-function toggleDarkMode() {
-    const htmlElement = document.documentElement;
-    htmlElement.classList.toggle('dark-mode');
-    console.log("Modo oscuro toggled");
-}
+var toggle = document.getElementById('container');
+var body =document.querySelector('body');
 
-// Ejemplo de cómo podrías añadir un evento a un botón para el modo oscuro
-document.addEventListener('DOMContentLoaded', function () {
-    const darkModeToggleBtn = document.getElementById('dark-mode-toggle');
-    if (darkModeToggleBtn) {
-        darkModeToggleBtn.addEventListener('click', toggleDarkMode);
-    }
-});
+toggle.onclick = function(){
+    toggle.classList.toggle('active');
+    body.classList.toggle('active');
+}
