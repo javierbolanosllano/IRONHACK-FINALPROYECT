@@ -12,14 +12,6 @@ body {
   padding: 0;
 }
 
-header {
-  padding: 5px 0;
-  font-size: 1.5em;
-  border-radius: 15px;
-  margin: 10px 10%;
-  text-align: center;
-}
-
 h1{
   color: #333;
   font-size: 50px;
@@ -120,7 +112,6 @@ input:checked + .slider::before {
   align-items: center;
   justify-content: center;
   margin-top: 2%;
-  margin-bottom: 10%;
 }
 
 #darkmode {
@@ -128,110 +119,83 @@ input:checked + .slider::before {
   font-size: 15px;
 }
 
+/* Estilo para centrar los eventos */
+#evento {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#evento tr {
+  display: flex;
+  flex-direction: row; /* Cambiado a fila para alinear etiquetas a la izquierda */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#evento label {
+  margin-right: 10px; /* Añadido margen a la derecha para separar etiquetas de campos de entrada */
+}
+
+#evento input,
+#evento select,
+#evento textarea {
+  padding: 8px;
+  width: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#btnAgregarEvento,
+#btnBorrarEvento,
+#btnConfirmarBorrarEvento {
+  background-color: #ffdb70;
+  color: #333;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#btnAgregarEvento:hover,
+#btnBorrarEvento:hover,
+#btnConfirmarBorrarEvento:hover {
+  background-color: #529fd3;
+}
+
+#eventoSeleccionado {
+  margin-top: 20px;
+}
+
+#selectEvento {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 #calendar {
-  margin: 0 auto;
   max-width: 800px;
+  margin: 20px auto;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px; /* Agrega un poco de espacio dentro del contenedor */
 }
 
-#btnAgregarEvento {
-  display: block;
-  margin: 10px auto;
-  padding: 10px;
-  background-color: #ffdb70;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#btnAgregarEvento:hover {
-  background-color: #daac21;
-}
-
-#btnBorrarEvento {
-  display: block;
-  margin: 10px 10px 10px 10px;
-  padding: 10px;
-  background-color: #ffdb70;
-  color: #333;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#btnBorrarEvento:hover {
-  background-color: #daac21;
-}
-
-#evento{
-  display: flexbox;
-  
-}
-
-label {
-  display: block;
+#darkmode {
   margin-top: 10px;
-  text-align: center;
-  font-size: 1.3em;
-  font-weight: 600;
+  font-size: 15px;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="time"],
-textarea {
-  padding: 10px;
-  margin: 10px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.fc-day-header {
-  background-color: #444;
-  color: #fff;
-}
-
-.fc-day,
-.fc-today {
-  background-color: #fff;
-}
-
-.fc-event {
-  background-color: #357d35;
-  color: #fff;
-  border: none;
-}
-
-.fc-event:hover {
-  background-color: #ffdb70;
-}
-
-.evento-estudio {
-  background-color: #82b5d7; /* Azul */
-  color: #fff;
-}
-
-.evento-tarea {
-  background-color: #ff4d4d; /* Rojo */
-  color: #fff;
-}
-
-.evento-examen-final {
-  background-color: #ffd633; /* Amarillo */
-  color: #fff;
-}
-
-.evento-examen-parcial {
-  background-color: #4dff4d; /* Verde */
-  color: #fff;
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }

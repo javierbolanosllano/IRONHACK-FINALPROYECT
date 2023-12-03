@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'timeGridWeek',
@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         events: [],
-        eventClick: function(info) {
+        eventClick: function (info) {
             var title = prompt('Editar Título:', info.event.title);
             if (title) {
                 info.event.setProp('title', title);
             }
         },
-        eventMouseEnter: function(info) {
+        eventMouseEnter: function (info) {
             if (info.event.extendedProps.description) {
                 alert('Descripción: ' + info.event.extendedProps.description);
             }
@@ -37,40 +37,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 start: fecha + 'T' + horaInicio,
                 end: fecha + (horaFin ? 'T' + horaFin : ''),
                 description: descripcion,
-                classNames: ['evento-' + tipo.toLowerCase()] // Asignar clase según el tipo
+                classNames: ['evento-' + tipo.toLowerCase()]
             };
 
             calendar.addEvent(nuevoEvento);
-            guardarEventos(); // Guardar eventos en el almacenamiento local
+            guardarEventos();
             limpiarCampos();
         } else {
             alert('Por favor, complete todos los campos requeridos.');
         }
     }
 
-    function borrarEvento() {
-        var idEventoSeleccionado = document.getElementById('selectEvento').value;
-        if (idEventoSeleccionado) {
-            var event = calendar.getEventById(idEventoSeleccionado);
-            if (event) {
-                event.remove();
-                guardarEventos(); // Guardar eventos actualizados en el almacenamiento local
-                actualizarListaEventos();
-                limpiarCampoSeleccion();
-            } else {
-                alert('No se pudo encontrar el evento con el ID: ' + idEventoSeleccionado);
-            }
+    function borrarEvento(idEventoSeleccionado) {
+        var event = calendar.getEventById(idEventoSeleccionado);
+        if (event) {
+            event.remove();
+            guardarEventos();
+            actualizarListaEventos();
+            limpiarCampoSeleccion();
         } else {
-            alert('Seleccione un evento para borrar.');
+            alert('No se pudo encontrar el evento con el ID: ' + idEventoSeleccionado);
         }
     }
-    
 
     function actualizarListaEventos() {
         var selectEvento = document.getElementById('selectEvento');
         selectEvento.innerHTML = '';
 
-        calendar.getEvents().forEach(function(event) {
+        calendar.getEvents().forEach(function (event) {
             var option = document.createElement('option');
             option.value = event.id;
             option.text = event.title;
@@ -94,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function guardarEventos() {
-        var eventos = calendar.getEvents().map(function(event) {
+        var eventos = calendar.getEvents().map(function (event) {
             return {
                 title: event.title,
                 start: event.start.toISOString(),
@@ -120,12 +114,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('txtFecha').value = '';
         document.getElementById('txtHoraInicio').value = '';
         document.getElementById('txtHoraFin').value = '';
-        document.getElementById('txtTipo').value = 'estudio'; // Restablecer el tipo por defecto
+        document.getElementById('txtTipo').value = 'estudio';
         document.getElementById('txtDescripcion').value = '';
     }
 
     document.getElementById('btnAgregarEvento').addEventListener('click', agregarEvento);
-    document.getElementById('btnBorrarEvento').addEventListener('click', function() {
+    document.getElementById('btnBorrarEvento').addEventListener('click', function () {
         actualizarListaEventos();
         limpiarCampoSeleccion();
     });
@@ -136,8 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('input').addEventListener('change', () => {
     if (document.body.className.indexOf('dark') === -1) {
-      document.body.classList.add('dark');
+        document.body.classList.add('dark');
     } else {
-      document.body.classList.remove('dark');
+        document.body.classList.remove('dark');
     }
-  });
+});
