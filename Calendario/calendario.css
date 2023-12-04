@@ -32,7 +32,7 @@ nav {
   border-radius: 10px;
   display: flex;
   justify-content: space-around;
-  margin: 10px 20% 2% 20%;
+  margin: 10px 15% 2% 15%;
 }
 
 nav a {
@@ -126,13 +126,6 @@ input:checked + .slider::before {
   align-items: center;
 }
 
-#evento tr {
-  display: flex;
-  flex-direction: row; /* Cambiado a fila para alinear etiquetas a la izquierda */
-  align-items: center;
-  margin-bottom: 10px;
-}
-
 #evento label {
   margin-right: 10px; /* Añadido margen a la derecha para separar etiquetas de campos de entrada */
 }
@@ -141,7 +134,7 @@ input:checked + .slider::before {
 #evento select,
 #evento textarea {
   padding: 8px;
-  width: 40px;
+  width: 200px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -163,7 +156,7 @@ input:checked + .slider::before {
 #btnAgregarEvento:hover,
 #btnBorrarEvento:hover,
 #btnConfirmarBorrarEvento:hover {
-  background-color: #529fd3;
+  background-color: #ffcc32;
 }
 
 #eventoSeleccionado {
@@ -171,11 +164,12 @@ input:checked + .slider::before {
 }
 
 #selectEvento {
-  width: 100%;
+  width: 200px;
   padding: 8px;
   border: 1px solid #333;
   border-radius: 5px;
   margin-bottom: 10px;
+  margin-right: 20px;
 }
 
 #calendar {
