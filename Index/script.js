@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const loginBtn = document.getElementById('login-btn');
   const loginForm = document.getElementById('login-form');
 
-  // Hide the login form initially
+  // Ocultar el login del inicio
   loginForm.style.display = 'none';
 
   loginBtn.addEventListener('click', () => {
-    // Toggle the display property of the login form
+    
     loginForm.style.display = loginForm.style.display === 'none' ? 'flex' : 'none';
   });
 });
